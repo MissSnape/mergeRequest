@@ -1,3 +1,5 @@
+const contentElement=document.getElementById("box")
+renderStartPage({contentElement})
 function renderStartPage({contentElement}){
 
     let startPageHtml = `
@@ -16,7 +18,27 @@ function renderStartPage({contentElement}){
             </div>
         </div>`
     contentElement.innerHTML = startPageHtml;
-   
+    let startButton = document.getElementById('start-button');
+
+    startButton.addEventListener('click',() => {
+    let buttonOneLevel = document.getElementById('one');
+    let buttonTwoLevel = document.getElementById('two');
+    let buttonThreeLevel = document.getElementById('three');
+    
+        if (buttonOneLevel.checked) {
+           renderEasyPage({contentElement});
+            
+        }
+        
+        if (buttonTwoLevel.checked) {
+            renderMediumPage({contentElement});
+             
+         }
+         if (buttonThreeLevel.checked) {
+            renderHardPage({contentElement});
+             
+         }
+    })
 }
      function renderEasyPage({contentElement}){
         let easyPageContent =`<div class = "level_page">
@@ -39,24 +61,4 @@ function renderStartPage({contentElement}){
 
 //renderStartPage ({contentElement});
 
-let startButton = document.getElementById('start-button');
 
-startButton.addEventListener('click',() => {
-let buttonOneLevel = document.getElementById('one');
-let buttonTwoLevel = document.getElementById('two');
-let buttonThreeLevel = document.getElementById('three');
-
-    if (buttonOneLevel.checked) {
-       renderEasyPage({contentElement});
-        
-    }
-    
-    if (buttonTwoLevel.checked) {
-        renderMediumPage({contentElement});
-         
-     }
-     if (buttonThreeLevel.checked) {
-        renderHardPage({contentElement});
-         
-     }
-})
