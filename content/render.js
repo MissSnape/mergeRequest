@@ -1,25 +1,26 @@
 export function renderStartPage({ contentElement }) {
   let startPageHtml = `<div class="box " id="box">
-  <h1 class="heading" >Выбери сложность</h1>
-<div class="box-button" id = "box_button">
-
-<div class="button">
-    <input type="radio" class="button-level" id="radio1" name="radios" value="1" checked>
-    <label for="radio1">1</label>
-</div>
-    
-<div class="button">
-    <input type="radio"class="button-level"id="radio2" name="radios" value="2" >
-    <label for="radio2">2</label>
-</div> 
-
-<div class="button">
-    <input type="radio" class="button-level" id="radio3" name="radios" value="3" >
-    <label for="radio3">3</label>
-</div>
-</div>
-<button id="button_start" class="button-start">Старт</button>
-</div>`;
+  <div><h3 class='choice-text'>Выбери сложность</h3></div>
+  <div class="play">
+      <div class="level-block">
+         <input type="radio" class="level-block-text" name="radios"  id="one"></input>
+         <label for="one">1</label>
+         </div>
+         
+         <div class="level-block">
+          <input type="radio" class="level-block-text" name="radios"  id="two"></input>
+          <label for="two">2</label>
+          </div>
+         
+          <div class="level-block">
+              <input type="radio" class="level-block-text" name="radios" id="three"></input>
+              <label for="three">3</label>
+              </div>
+              
+              </div>
+              <button class='start-button' id="start-button" type="submit">Старт</button>
+          </div>
+      `;
   contentElement.innerHTML = startPageHtml;
   
 }

@@ -4,26 +4,30 @@ import {
   renderMediumPage,
   renderHardPage,
 } from "./render.js";
-let contentElement = document.getElementById("page");
-console.log(contentElement);
+const contentElement=document.getElementById("box");
+
 
 renderStartPage({ contentElement });
 
-let startButton = document.getElementById("button_start");
+let startButton = document.getElementById('start-button');
 
-startButton.addEventListener("click", () => {
-  let buttonOneLevel = document.getElementById("radio1");
-  let buttonTwoLevel = document.getElementById("radio2");
-  let buttonThreeLevel = document.getElementById("radio3");
- 
-  if (buttonOneLevel.checked) {
-    renderEasyPage({ contentElement });
-  }
+startButton.addEventListener('click',() => {
+let buttonOneLevel = document.getElementById('one');
+let buttonTwoLevel = document.getElementById('two');
+let buttonThreeLevel = document.getElementById('three');
 
-  if (buttonTwoLevel.checked) {
-    renderMediumPage({ contentElement });
-  }
-  if (buttonThreeLevel.checked) {
-    renderHardPage({ contentElement });
-  }
-});
+    if (buttonOneLevel.checked) {
+       renderEasyPage({contentElement});
+        
+    }
+    
+    if (buttonTwoLevel.checked) {
+        renderMediumPage({contentElement});
+         
+     }
+     if (buttonThreeLevel.checked) {
+        renderHardPage({contentElement});
+         
+     }
+})
+
