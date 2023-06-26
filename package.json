@@ -19,7 +19,9 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write ./*.js && prettier --write ./**/*.js",
         "lint:js": "eslint ./**/*.js && eslint ./*.js",
-        "lint:scss": "stylelint ./*.scss"
+        "lint:scss": "stylelint ./*.scss",
+        "build": "webpack",
+        "start": "webpack serve --open"
     },
     "author": "",
     "license": "ISC"
