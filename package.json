@@ -1,28 +1,49 @@
 {
-    "devDependencies": {
-        "eslint": "^8.41.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "prettier": "^2.8.8",
-        "stylelint": "^15.6.2",
-        "stylelint-config-standard": "^33.0.0",
-        "stylelint-config-standard-scss": "^9.0.0",
-        "stylelint-prettier": "^3.0.0",
-        "webpack": "^5.88.0",
-        "webpack-cli": "^5.1.4"
-    },
-    "name": "webdev-card-game",
-    "description": "",
+    "name": "card-game",
     "version": "1.0.0",
+    "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "format": "prettier --write ./*.js && prettier --write ./**/*.js",
-        "lint:js": "eslint ./**/*.js && eslint ./*.js",
-        "lint:scss": "stylelint ./*.scss",
-        "build": "webpack",
-        "start": "webpack serve --open"
+        "build": "cross-env NODE_ENV=production webpack",
+        "start": "webpack-dev-server --open",
+        "test": "jest",
+        "format": "prettier --write ./",
+        "lint:js": "eslint ./**/*.js",
+        "lint:css": "stylelint ./**/*.css",
+        "prepare": "husky install",
+        "lint": "npm run lint:js && npm run lint:css"
     },
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "lodash": "^4.17.21",
+        "prettier": "^2.8.8",
+        "stylelint": "^15.7.0",
+        "stylelint-config-prettier": "^9.0.5",
+        "stylelint-config-standard": "^33.0.0",
+        "stylelint-prettier": "^3.0.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.2",
+        "@typescript-eslint/eslint-plugin": "^5.60.1",
+        "@typescript-eslint/parser": "^5.60.1",
+        "copy-webpack-plugin": "^11.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.8.1",
+        "eslint": "^8.43.0",
+        "html-webpack-plugin": "^5.5.2",
+        "husky": "^8.0.3",
+        "jest": "^29.5.0",
+        "style-loader": "^3.3.3",
+        "ts-jest": "^29.1.0",
+        "ts-loader": "^9.4.3",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.6",
+        "webpack": "^5.87.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
 }
